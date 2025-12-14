@@ -7,7 +7,7 @@ function App() {
   const [expenses, setExpenses] = useState([]);
 
   const loadExpenses = async () => {
-    const res = await axios.get("http://localhost:5000/api/expenses");
+    const res = await axios.get("https://mern-expense-tracker-l5zv.onrender.com//api/expenses");
     setExpenses(res.data);
   };
 

@@ -3,7 +3,7 @@ import axios from "axios";
 export default function ExpenseList({ expenses, refresh }) {
 
   const deleteExpense = async (id) => {
-    await axios.delete(`http://localhost:5000/api/expenses/${id}`);
+    await axios.delete(`https://mern-expense-tracker-l5zv.onrender.com/api/expenses${id}`);
     refresh();
   };
 

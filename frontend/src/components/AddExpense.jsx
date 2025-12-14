@@ -10,7 +10,7 @@ export default function AddExpense({ refresh }) {
   });
 
   const submit = async () => {
-    await axios.post("http://localhost:5000/api/expenses/add", expense);
+    await axios.post("https://mern-expense-tracker-l5zv.onrender.com/api/expenses/add", expense);
     refresh();
   };
 
