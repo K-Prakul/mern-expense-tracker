@@ -9,9 +9,13 @@ app.use("/api/expenses", require("./routes/expenseRoutes"));
 app.get("/", (req, res) => {
   res.send("Backend Running");
 });
+console.log("MONGO_URI RECEIVED BY RENDER:", process.env.MONGO_URI);
 
-mongoose.connect("process.env.MONGO_URI")
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 .then(() => console.log("MongoDB Connected"))
-.catch(err => console.log(err));
+.catch(err => console.log("MongoDB Error:", err));
 
 app.listen(5000, () => console.log("Server running on port 5000"));
