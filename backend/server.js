@@ -11,11 +11,9 @@ app.get("/", (req, res) => {
 });
 console.log("MONGO_URI RECEIVED BY RENDER:", process.env.MONGO_URI);
 
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => console.log("MongoDB Connected"))
-.catch(err => console.log("MongoDB Error:", err));
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log("MongoDB Error:", err));
+
 
 app.listen(5000, () => console.log("Server running on port 5000"));
